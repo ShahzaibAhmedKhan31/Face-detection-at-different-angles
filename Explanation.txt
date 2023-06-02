@@ -1,0 +1,3 @@
+Image 3 in which the face was approximately 90 degrees rotated, my function (Match_mytemplate) was unable to detect
+the correct postion of that face in the Main image (group image). It was matching with number of different position
+in the group image.

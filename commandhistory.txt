@@ -1,0 +1,58 @@
+>>Image1=imread('pic1.jpg');
+>>Image2=imread('pic2.jpg');
+>>Image3=imread('pic3.jpg');
+>>Image4=imread('Main.jpg');
+>>imshow([Image1 Image2 Image3])
+>>imshow(Image4)
+>>IImage1 = rgb2gray(Image1);
+>>IImage2 = rgb2gray(Image2);
+>>IImage3 = rgb2gray(Image3);
+>>IImage4 = rgb2gray(Image4);
+>>imshow([IImage1 IImage2 IImage3])
+>>IImage1 = double(IImage1)/255;
+>>IImage2 = double(IImage2)/255;
+>>IImage3 = double(IImage3)/255;
+>>IImage4 = double(IImage4)/255;
+>>imshow([IImage1 IImage2 IImage3])
+>>Face1 = IImage1(345:520,206:338);
+>>Face2 = IImage2(220:348,322:496);
+>>Face3 = IImage3(348:532,200:362);
+>>Main_image=mean(IImage4);
+>>Main_image=mean(IImage4(:));
+
+Main_image = 0.5103
+
+>>Face1_mean = mean(IImage1(:));
+>>Face2_mean = mean(IImage2(:));
+>>Face3_mean = mean(IImage3(:));
+>>Result1 = imfilter((IImage4-Main_Image),(Face1-Face1_mean));
+>>Result2 = imfilter((IImage4-Main_Image),(Face2-Face2_mean));
+>>Result3 = imfilter((IImage4-Main_Image),(Face3-Face3_mean));
+>>imshow(Result1, []);
+>>colormap jet
+>>imshow(Result2, []);
+>>colormap jet
+>>imshow(Result3, []);
+>>colormap jet
+>>imshow(Result1 == max(Result1(:)))
+>>imshow(Result2 == max(Result2(:)))
+>>imshow(Result3 == max(Result3(:)))
+>>Image1 = Imagetodouble(Image1);
+>>imshow(Image1)
+>>Image2 = Imagetodouble(Image2);
+>>imshow(Image2)
+>>Image3 = Imagetodouble(Image3);
+>>imshow(Image3)
+>>Image4 = Imagetodouble(Image4);
+>>imshow(Image4)
+>> Template1 = Image1(345:520,206:338);
+>> Template2 = Image2(220:348,322:496);
+>> Template3 = Image3(348:532,200:362);
+>>Match_mytemplate(Image4,Template1);
+>>colormap jet
+>>Match_mytemplate(Image4,Template2);
+>>colormap jet
+>>Match_mytemplate(Image4,Template3);
+>>colormap jet
+
+
